@@ -7,14 +7,14 @@
     $scope.list = "";
     $scope.messageCheck = "Please enter data first";
     function message(listSize) {
-      if (listSize == 0) {
-        return "Please enter data first"
-      }
-      else if (listSize <= 3) {
+      if (listSize <= 3) {
         return "Enjoy!"
       }
       else if (listSize > 3) {
         return "Too much!"
+      }
+      else{
+        return "Please enter data first"
       }
     };
     $scope.checkList = function () {
