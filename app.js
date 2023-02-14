@@ -1,11 +1,14 @@
 (function () {
   'use strict';
+  
   angular.module('LunchChecker', [])
   .controller('LunchCheckController', LunchCheckController);
+
   LunchCheckController.$inject = ['$scope'];
   function LunchCheckController($scope){
     $scope.list = "";
     $scope.messageCheck = "Please enter data first";
+
     function message(listSize) {
       if (listSize == 0) {
         return "Please enter data first"
@@ -17,6 +20,7 @@
         return "Too much!"
       }
     };
+
     $scope.checkList = function () {
       var arrayOfList = $scope.list.split(",");
       var listSize = arrayOfList.length
@@ -25,5 +29,6 @@
       }
       $scope.messageCheck=message(listSize);
     };
+
   }
 })();
